@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TempleSeva — Connect Temples & Donors</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="wrap">
+      <a id="logo" class="logo" href="#" aria-label="Home"><span class="logo-ico">🛕</span><span>TempleSeva</span></a>
+
+      <nav class="nav" id="nav">
+        <a class="nav-link active" data-page="home" href="#">Home</a>
+        <a class="nav-link" data-page="temples" href="#">Temples</a>
+        <a class="nav-link" data-page="transactions" href="#">Transactions</a>
+        <a class="nav-link" data-page="dashboard" href="#">Dashboard</a>
+      </nav>
+
+      <div class="actions" id="actions">
+        <div id="auth-buttons" class="auth">
+          <button class="btn btn-ghost" id="login-btn"><i class="fas fa-sign-in-alt"></i> Login</button>
+          <button class="btn btn-primary" id="signup-btn"><i class="fas fa-user-plus"></i> Sign Up</button>
+        </div>
+
+        <div id="user-info" class="user-info hidden">
+          <div id="user-avatar" class="avatar">U</div>
+          <div class="user-meta">
+            <div id="username-display" class="username">User</div>
+            <div id="user-role" class="role">Donor</div>
+          </div>
+          <button id="logout-btn" class="btn btn-ghost"><i class="fas fa-sign-out-alt"></i></button>
+        </div>
+
+        <button id="mobile-toggle" class="mobile-toggle" aria-label="Toggle menu"><i class="fas fa-bars"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap main">
+    <!-- Home -->
+    <section id="home" class="page active" aria-live="polite">
+      <div class="hero-card">
+        <div class="hero-left">
+          <h1>Support local temples — transparently and quickly</h1>
+          <p class="muted">Find temples that need funds, donate securely, and track the impact of your support.</p>
+          <div class="hero-actions">
+            <button class="btn btn-accent" id="explore-temples-btn"><i class="fas fa-hands-helping"></i> Explore Temples</button>
+            <button class="btn btn-outline" id="learn-more-btn">How it works</button>
+          </div>
+        </div>
+        <div class="hero-right">
+          <div class="stats-card" aria-hidden="true">
+            <div>
+              <div class="stat-value" id="stat-temples">0</div>
+              <div class="stat-label">Temples</div>
+            </div>
+            <div>
+              <div class="stat-value" id="stat-donations">₹0</div>
+              <div class="stat-label">Total Donations</div>
+            </div>
+            <div>
+              <div class="stat-value" id="stat-users">0</div>
+              <div class="stat-label">Users</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <section class="features">
+        <div class="feature">
+          <div class="feature-ico">📝</div>
+          <h3>Temple Profiles</h3>
+          <p class="muted">Temples create profiles with funding goals and images.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-ico">🔍</div>
+          <h3>Discover</h3>
+          <p class="muted">Search, filter and find causes you care about.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-ico">💝</div>
+          <h3>Donate & Track</h3>
+          <p class="muted">Donate and see updates on usage and progress.</p>
+        </div>
+      </section>
+    </section>
+
+    <!-- Temples -->
+    <section id="temples" class="page" aria-hidden="true">
+      <div class="section-head">
+        <h2>Temples Needing Support</h2>
+        <div class="controls">
+          <input id="search-temples" class="input" placeholder="Search temples..." />
+          <select id="filter-location" class="input small" aria-label="Filter by location">
+            <option value="">All Locations</option>
+            <option>Mumbai</option>
+            <option>Delhi</option>
+            <option>Bangalore</option>
+            <option>Chennai</option>
+          </select>
+          <select id="filter-sort" class="input small" aria-label="Sort">
+            <option value="needed">Most Needed</option>
+            <option value="recent">Recently Added</option>
+            <option value="name">Name A–Z</option>
+          </select>
+          <button id="add-temple-btn" class="btn btn-primary hidden"><i class="fas fa-plus"></i> Add Temple</button>
+        </div>
+      </div>
+
+      <div id="temples-list" class="cards-grid" aria-live="polite"></div>
+    </section>
+
+    <!-- Transactions -->
+    <section id="transactions" class="page" aria-hidden="true">
+      <div class="section-head">
+        <h2>Transactions</h2>
+        <div class="controls">
+          <button id="export-csv-btn" class="btn btn-outline"><i class="fas fa-file-csv"></i> Export CSV</button>
+        </div>
+      </div>
+
+      <div id="transactions-content" class="table-card" aria-live="polite"></div>
+    </section>
+
+    <!-- Dashboard -->
+    <section id="dashboard" class="page" aria-hidden="true">
+      <div class="section-head">
+        <h2>Dashboard</h2>
+      </div>
+      <div id="dashboard-content"></div>
+    </section>
+  </main>
+
+  <!-- Hidden admin-only document link (keeps your uploaded path available but not shown to users) -->
+  <div id="admin-docs" style="display:none;">
+    <!-- Developer-specified path (left hidden). Path: /mnt/data/PARENT DECLARATION.pdf -->
+    <a id="parent-pdf-link" href="/mnt/data/PARENT DECLARATION.pdf" target="_blank" rel="noopener">Parent Declaration (hidden)</a>
+  </div>
+
+  <!-- Modal root -->
+  <div id="modal-root" aria-hidden="true"></div>
+
+  <!-- Toast -->
+  <div id="toast" class="toast hidden" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

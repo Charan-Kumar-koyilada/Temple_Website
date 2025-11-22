@@ -1,0 +1,52 @@
+[
+  {
+    "id": "temple_1",
+    "name": "Tirumala Venkateswara Temple",
+    "location": "Tirupati, Andhra Pradesh",
+    "description": "Major Vaishnavite temple atop the Tirumala hills.",
+    "fund_needed": 250000,
+    "fund_received": 120000,
+    "images": [],
+    "createdAt": "2025-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "temple_2",
+    "name": "Kashi Vishwanath Temple",
+    "location": "Varanasi, Uttar Pradesh",
+    "description": "Famous Shiva temple on the Ganges.",
+    "fund_needed": 150000,
+    "fund_received": 50000,
+    "images": [],
+    "createdAt": "2025-01-02T00:00:00.000Z"
+  },
+  {
+    "id": "temple_3",
+    "name": "Meenakshi Amman Temple",
+    "location": "Madurai, Tamil Nadu",
+    "description": "Historic temple with remarkable gopurams.",
+    "fund_needed": 90000,
+    "fund_received": 30000,
+    "images": [],
+    "createdAt": "2025-01-03T00:00:00.000Z"
+  },
+  {
+    "id": "temple_4",
+    "name": "Golden Temple (Harmandir Sahib)",
+    "location": "Amritsar, Punjab",
+    "description": "Central Sikh shrine with community kitchen.",
+    "fund_needed": 120000,
+    "fund_received": 80000,
+    "images": [],
+    "createdAt": "2025-01-04T00:00:00.000Z"
+  },
+  {
+    "id": "temple_5",
+    "name": "Jagannath Temple",
+    "location": "Puri, Odisha",
+    "description": "One of the Char Dham pilgrimage sites.",
+    "fund_needed": 110000,
+    "fund_received": 40000,
+    "images": [],
+    "createdAt": "2025-01-05T00:00:00.000Z"
+  }
+]
